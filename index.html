@@ -32,23 +32,30 @@
         <h4 style="color:white;">Try it free 7 days <span style="color:white; opacity:0.5;">then $20/mo. thereafter</span></h4>
         </div>
 
-        <div class="form">
+        <div class="formpage">
+          <form class="form" onsubmit="return myFunc()">
           <div class="fName">
            <input type="text" placeholder="First Name" id="f_name"></input>
+           <p id="msg0"></p>
           </div>
           <div class="lName">
             <input type="text" placeholder="Last Name" id="l_name"></input>
+            <p id="msg1"></p>
           </div>
           <div class="mail">
             <input type="email" placeholder="Email Address" id="email"></input>
+            <p id="msg2"></p>
           </div>
           <div class="password">
             <input type="password" placeholder="Password" id="password"></input>
+            <p id="msg3"></p>
           </div>
+      
 
           <div class="trial">
             <input type="submit" value="CLAIM YOUR FREE TRIAL" id="submit"></input>
           </div>
+          </form>
 
           <div class="terms">
             <p>By clicking the button, you are agreeing to our <span style="color:red;">Terms and Services</span></p>
@@ -58,6 +65,7 @@
     </div>
 
   </div>
+  <script src="./script.js"></script>
 </body>
 
 </html>
