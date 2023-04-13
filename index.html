@@ -33,25 +33,31 @@
         </div>
 
         <div class="formpage">
-          <form class="form" onsubmit="return myFunc()">
-          <div class="fName">
-           <input type="text" placeholder="First Name" id="f_name"></input>
-           <p id="msg0"></p>
+          <form class="form" id="form">
+          <div class="form-control">
+           <input type="text" placeholder="First Name" id="f_name" autocomplete="off"></input>
+           <img class="error-icon" src="./images/icon-error.svg"   alt="">
+           <p id="msg0">error msg</p>
           </div>
-          <div class="lName">
-            <input type="text" placeholder="Last Name" id="l_name"></input>
-            <p id="msg1"></p>
+          <div class="form-control">
+            <input type="text" placeholder="Last Name" id="l_name" autocomplete="off"></input>
+            <!-- <img src="./images/icon-error.svg"  style="visibility: hidden;" alt=""> -->
+            <img class="error-icon" src="./images/icon-error.svg"   alt="">
+            <p id="msg1">error msg</p>
+
           </div>
-          <div class="mail">
+          <div class="form-control">
             <input type="email" placeholder="Email Address" id="email"></input>
-            <p id="msg2"></p>
+           <img class="error-icon" src="./images/icon-error.svg"   alt="">
+            <p id="msg2">error msg</p>
           </div>
-          <div class="password">
-            <input type="password" placeholder="Password" id="password"></input>
-            <p id="msg3"></p>
+          <div class="form-control">
+            <input type="password" placeholder="Password" id="password" autocomplete="off"></input>
+           <!-- <img src="./images/icon-error.svg"  style="visibility: hidden;" alt=""> -->
+           <img class="error-icon" src="./images/icon-error.svg"   alt="">
+            <p id="msg3">error msg</p>
           </div>
       
-
           <div class="trial">
             <input type="submit" value="CLAIM YOUR FREE TRIAL" id="submit"></input>
           </div>

@@ -1,35 +1,47 @@
-function myFunc(){
-// console.log("working")
+const form = document.getElementById('form');
+const fname = document.getElementById('f_name');
+const lname = document.getElementById('l_name');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
-    let fname = document.getElementById("f_name").value;
-    let lname = document.getElementById("l_name").value;
-    let mail = document.getElementById("email").value;
-    let pass = document.getElementById("password").value;
-    var flag=true;
-    // if(fname==="" && lname==="" && mail)
+form.addEventListener('submit',(e) => {
+    e.preventDefault();
+    validate();
+})
 
-    if(fname === ""){
-        document.getElementById("msg0").innerHTML="First Name cannot be empty";
+const validate = () => {
+    const fnameVal = fname.value.trim();
+    const lnameVal = lname.value.trim();
+    const emailVal = email.value.trim();
+    const passwordVal = password.value.trim();
+
+    if(fnameVal===""){
+        setErrorMsg(fname,'First Name cannot be empty');
     }
 
-
-    if(lname === ""){
-        document.getElementById("msg1").innerHTML="Last Name cannot be empty";
-
+    if(lnameVal===""){
+        setErrorMsg(lname, "Last Name cannot be empty");
     }
 
-    let pattern = "/^[a-zA-Z0-9]+[\._]?[a-z0-9]+[@]\w[.]\w{2,3}$/";
-    
-    if(mail.match(pattern)){
-        true;
-    }else{
-        document.getElementById("msg2").innerHTML="Looks like this is not an email";
-
+    let pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailVal===""){
+        setErrorMsg(email,"Email cannot be empty");
+    }
+    else if(emailVal.match(pattern)){
+        setErrorMsg(email,"This seems like a genuine email");
+    }
+    else{
+        setErrorMsg(email,"Looks like not an email");
     }
 
-    if(pass === ""){
-        document.getElementById("msg3").innerHTML ="Password cannot be empty";
+    if(passwordVal === ""){
+        setErrorMsg(password,"Password cannot be empty");
     }
-    flag=false;
-    return flag;
+}
+
+function setErrorMsg(input, errormsgs){
+    const formControl = input.parentElement;
+    const msg = formControl.querySelector('p');
+    formControl.className = "form-control error";
+    msg.innerText = errormsgs;
 }

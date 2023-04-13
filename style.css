@@ -57,7 +57,7 @@ body {
     height:35rem;
     width:80%;
     display:flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
 
 }
 .text-part{
@@ -74,14 +74,14 @@ body {
     line-height:1.2;
 }
 .form-submit{
-    width:46%;
+    width:30rem;
     height:35rem;
     display:flex;
     flex-direction:column;
     gap:16px;
 }
 .form-submit > .advertise{
-    width: 100%;
+    width: 30rem;
     background-color: var(--Blue);
     height: 3rem;
     display: flex;
@@ -91,8 +91,8 @@ body {
     box-shadow: 1px 8px 5px -2px var(--Green);
 }
 .form-submit > .formpage {
-    width:100%;
-    height:27rem;
+    width:30rem;
+    height:29.23rem;
     display:flex;
     flex-direction:column;
     background-color:rgb(255, 255, 255);
@@ -106,24 +106,9 @@ body {
 .formpage > .form{
     display:flex;
     flex-direction:column;
-    gap:1.4rem;
+    gap:1rem;
 }
-/* .form > .fName > #f_name{
-    height:3rem;
-    width:22rem;
-    border-radius:6px;
-    padding-left:2rem;
-}
-.form > .lName > #l_name{
-    height:3rem;
-    width:22rem;
-    border-radius:6px;
-}
-.form > .mail > #email{
-    height:3rem;
-    width:22rem;
-    border-radius:6px;
-} */
+
 .form > div > input{
     height:3rem;
     width:22rem;
@@ -134,13 +119,21 @@ body {
     outline: none ;
     border: 1px solid var(--Grayish-Blue);
 }
+/* while writing in input field */
 .form > div input:focus{
-    outline-color: blue;
+    outline-color: none;
+    border: 1px solid var(--Blue);
+    color:var(--Dark-Blue);
+    font-size:17px;
+    font-weight:700;
+    font-family: 'Poppins', sans-serif;
 }
+
 .form > .trial > #submit {
     height:3rem;
     width:22rem;
     border-radius:6px;
+    border:none;
     background-color:var(--Green);
     color: rgb(255, 255, 255);
     cursor:pointer;
@@ -157,4 +150,31 @@ body {
     font-weight:700;
     font-size:small;
     cursor:pointer;
+}
+
+/* styling for error messages and error icon */
+.formpage > .form > div > p {
+    font-size:10px;
+    color:var(--Red);
+    padding-left:15rem;
+    line-height:2;
+}
+.form-control{
+    position:relative;
+}
+.form-control img{
+    position: absolute;
+    top: 13px;
+    right: 4.8rem;
+    visibility:hidden;
+}
+.form-control p{
+    visibility:hidden;
+}
+.form-control.error p{
+    visibility:visible;
+}
+
+.form-control.error img.error-icon {
+    visibility:visible;
 }
